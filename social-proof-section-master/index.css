@@ -1,0 +1,149 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+--clr-dark-magenta:hsl(300, 43%, 22%);
+--clr-soft-pink:hsl(333, 80%, 67%);
+--clr-dark-grayish-magenta: hsl(303, 10%, 53%);
+--clr-light-grayish-magenta: hsl(300, 24%, 96%);
+--clr-white: hsl(0, 0%, 100%);
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 400;
+    background-color:var(--clr-white);
+    min-height: 100vh;
+    padding: 3em;
+    background-image: url(images/bg-pattern-top-desktop.svg);
+    background-repeat: no-repeat;
+    font-size: 15px;
+}
+.top{
+    display: grid;
+    margin-bottom: 2em;
+    grid-template-columns: minmax(150px, 1fr) 1fr;
+    gap: 3em;
+    grid-template-areas: 
+    "first-grid second-grid"
+    ;
+}
+.top-first h2{
+    color: var(--clr-dark-magenta);
+    font-size: 700;
+}
+.top-first p{
+    max-width: 28em;
+    padding-top: 1em;
+    color: var(--clr-dark-grayish-magenta);
+}
+.top-second{
+    margin: auto;
+}
+.top-second p{
+    background-color: var(--clr-light-grayish-magenta);
+    width: 23em;
+    margin-bottom: 10px;
+    padding: .7em .8em;
+    border-radius: .3em;
+    color: var(--clr-dark-magenta);
+    font-weight: 700;
+}
+.top-second p:nth-child(2){
+    position: relative;
+    left: 2em;
+}
+.top-second p:nth-child(3){
+    position: relative;
+    left: 4em;
+}
+@media(max-width: 375px){
+    .top{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "first-grid"
+        "second-grid"
+        ;
+    }
+    .top-first h2{
+        text-align: center;
+    }
+    .top-first p{
+        text-align: center;
+    }
+    .stars{
+        display: block;
+        text-align: center;
+    }
+    .top-second p{
+        text-align: center;
+    }
+    .top-second p:nth-child(2){
+        position: relative;
+        left: 0;
+    }
+    .top-second p:nth-child(3){
+        position: relative;
+        left: 0;
+    }
+}
+.main{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+}
+.colton, .roberts, .anne{
+    background-color: var(--clr-dark-magenta);
+    border-radius: 0.3em;
+    padding: 2em;
+}
+.colton-description img, .roberts-description img, .anne-description img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+.colton-description , .roberts-description, .anne-description {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5em;
+}
+.colton-description p, .roberts-description p, .anne-description p{
+    margin-left: 1em;
+    color: var(--clr-white);
+    font-weight: 700;
+} 
+.colton-description span, .roberts-description span, .anne-description span{
+    color: var(--clr-soft-pink);
+    font-weight: 400;
+}
+.colton p, .roberts p ,.anne p{
+    color: var(--clr-white);
+}
+.roberts{
+    position: relative;
+    top: 2em;
+}
+.anne{
+    position: relative;
+    top: 4em;
+}
+@media(max-width: 375px){
+    .main{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-self: center;
+    }
+    .roberts{
+        position: relative;
+        top: 0;
+    }
+    .anne{
+        position: relative;
+        top: 0;
+    }
+}
+
